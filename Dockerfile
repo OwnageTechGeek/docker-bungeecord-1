@@ -1,16 +1,16 @@
 FROM nimmis/java:openjdk-8-jdk
 
-MAINTAINER nimmis <kjell.havneskold@gmail.com>
+MAINTAINER rehf27 <james@rehf27.com>
 
 #non-interactive installation
 ENV DEBIAN_FRONTEND noninteractive
 
 #default directory for SPIGOT-server
-ENV SPIGOT_HOME /minecraft
+ENV BUNGEECORD_HOME /bungeecord
 
-ADD spigot_init.sh /spigot_init.sh
+ADD bungeecord_init.sh /bungeecord_init.sh
 
-RUN chmod +x /spigot_init.sh
+RUN chmod +x /bungeecord_init.sh
 
 # fast workaround 
 RUN apt-get update && apt-get install -y wget git && apt-get clean all
@@ -23,5 +23,5 @@ RUN useradd -s /bin/bash -d /minecraft -m minecraft
 EXPOSE 25565
 
 #set default command
-CMD /spigot_init.sh
+CMD /bungeecord_init.sh
 
