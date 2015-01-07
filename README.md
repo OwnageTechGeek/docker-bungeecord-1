@@ -1,19 +1,12 @@
-## Minecraft server SPIGIT on Ubuntu 14.04 with openjava 1.8
+## Bungeecord server on Ubuntu 14.04 with openjava 1.8
 
-This docker image builds and runs the spigot version of minecraft. 
-
-If the spigot.jar is not found in the minecraft directory the system pulls down BuildTool and build a new spigot.jar from the latest
-released minecraft.jar
-
-## Why not a precompiled version of spigot included
-
-Due to leagal reasons you can build it but not redistribute the finished jar.
+This docker image builds and runs the bungeecord. 
 
 ## Starting the container
 
 To run the lastest stable version of this docker image run
 
-	docker run -ti -p 25565:25565 -e EULA=true nimmis/spigot
+	docker run -ti -p 25565:25565 -e EULA=true rehf27/bungeecord
 
 the parameter
 
@@ -34,26 +27,25 @@ you only type -p 25565 it will connect to a random port on the machine
 To make it easier to handle you container you can give it a name instead of the long
 number thats normaly give to it, add a
 
-	--name minecraft
+	--name bungeecord
 
 to the run command to give it the name minecraft, then you can start it easier with
 
-	docker start minecraft
-	docker stop minecraft
+	docker start bungeecord
+	docker stop bungeecord
 
 ## First time run
 
 This will take a couple of minuters depending on computer and network speed. It will pull down
-the latest version on BuildTools and build a spigot.jar from the latest minecraft version.
-This is done in numerous steps so be patient. 
+the latest version of Bungeecord. 
 
 If the compilation was successful the server will start in interactive mode. Log in from a minecraft
 client to controll that all works. The type
 
 	stop
 
-to drop back to a root shell in the minecraft directory. Edit and add files to customize your
-minecraft server.
+to drop back to a root shell in the bungeecord directory. Edit and add files to customize your
+bungeecord server.
 
 When you are finished do a
 
@@ -84,7 +76,7 @@ The syntax for it is
 
 To attach the minecraft directory in the container to directory /home/nimmis/mc-srv you add
 
-	-v /home/nimmis/mc-srv:/minecraft
+	-v /home/nimmis/mc-srv:/bungeecord
 
 ## Future features
 
