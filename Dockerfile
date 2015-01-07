@@ -12,16 +12,15 @@ ADD bungeecord_init.sh /bungeecord_init.sh
 
 RUN chmod +x /bungeecord_init.sh
 
-# fast workaround 
+# fast workaround
 RUN apt-get update && apt-get install -y wget git && apt-get clean all
 
-# Make special user for minecraft to run in
+# Make special user for bungeecord to run in
 
-RUN useradd -s /bin/bash -d /minecraft -m minecraft
+RUN useradd -s /bin/bash -d /bungeecord -m bungeecord
 
-# expose minecraft port
+# expose bungeecord port
 EXPOSE 25565
 
 #set default command
 CMD /bungeecord_init.sh
-
