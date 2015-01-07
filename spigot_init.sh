@@ -2,7 +2,7 @@
 if [ "$EULA" != "true" ]; then
   echo "*****************************************************************"
   echo "*****************************************************************"
-  echo "** To be able to run spigot you need to accept minecrafts EULA **"
+  echo "** To be able to run bungeecord you need to accept minecrafts EULA **"
   echo "** see https://account.mojang.com/documents/minecraft_eula     **"
   echo "** include -e EULA=true on the docker run command              **"
   echo "*****************************************************************"
@@ -11,25 +11,23 @@ if [ "$EULA" != "true" ]; then
 fi
 
 #only build if jar file does not exist
-if [ ! -f /$SPIGOT_HOME/spigot.jar ]; then 
-  echo "Building spigot jar file, be patient"
-  mkdir -p /$SPIGOT_HOME/build
-  cd /$SPIGOT_HOME/build
-  wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
-  HOME=/$SPIGOT_HOME/build java -jar BuildTools.jar
-  cp /$SPIGOT_HOME/build/Spigot/Spigot-Server/target/spigot-1.8*.jar /$SPIGOT_HOME/spigot.jar
-
+if [ ! -f /$BUNGEECORD_HOME/bungeecord.jar ]; then 
+  echo "Downloading bungeecord jar file, be patient"
+  mkdir -p /$BUNGEECORD_HOME/
+  cd /$BUNGEECORD_HOME/
+  wget http://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
+  
   #accept eola
-  echo "eula=true" > /$SPIGOT_HOME/eula.txt
+  echo "eula=true" > /$BUNGEECORD_HOME/eula.txt
 
 fi
 
 # chance owner to minecraft
-chown -R minecraft.minecraft /$SPIGOT_HOME/
+chown -R minecraft.minecraft /$BUNGEECORD_HOME/
 
 
-cd /$SPIGOT_HOME/
-su - minecraft -c 'java -Xms512M -Xmx1536M -XX:MaxPermSize=128M -jar spigot.jar'
+cd /$BUNGEECORD_HOME/
+su - minecraft -c 'java -Xms512M -Xmx1536M -XX:MaxPermSize=128M -jar BungeeCord.jar'
 
 # fallback to root and run shell if spigot don't start/forced exit
 bash
