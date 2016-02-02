@@ -1,5 +1,7 @@
 ## Bungeecord server on Ubuntu 14.04 with openjava 1.8
 
+[![Join the chat at https://gitter.im/rehf27/docker-bungeecord](https://badges.gitter.im/rehf27/docker-bungeecord.svg)](https://gitter.im/rehf27/docker-bungeecord?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This docker image builds and runs the bungeecord. 
 
 ## Starting the container
