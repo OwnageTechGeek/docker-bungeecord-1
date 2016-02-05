@@ -1,0 +1,28 @@
+world0data:
+  image: busybox
+  volumes:
+    - /minecraft
+  command: 'true'
+world0server:
+  image: nimmis/spigot
+  volumes_from:
+    - world0data
+  environment:
+    - EULA=true
+bungeecorddata:
+  image: busybox
+  volumes:
+    - /bungeecord
+  command: 'true'
+bungeecordserver:
+  image: rehf27/bungeecord
+  ports:
+    - 25565:25565
+  volumes_from:
+    - bungeecorddata
+  environment:
+    - EULA=true
+  links:
+    - world0server
+    - world1server
+    - world2server
