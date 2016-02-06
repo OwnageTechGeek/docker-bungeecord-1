@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y wget git && apt-get clean all
 RUN useradd -s /bin/bash -d /bungeecord -m bungeecord
 
 # expose bungeecord port
-EXPOSE 25565
+EXPOSE 25577
 
 #set default command
 CMD /bungeecord_init.sh
