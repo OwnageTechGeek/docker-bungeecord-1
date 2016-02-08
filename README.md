@@ -116,8 +116,7 @@ docker run --rm -t -i --volumes-from $CONTAINER_NAME centos /bin/bash
 docker run --rm -t -i \
 --volumes-from dockerbungeecord_world0data_1 \
 centos \
-/bin/bash sed -i 's/online-mode=true/online-mode=false/' \ /minecraft/server.properties
-\
+sed -i 's/online-mode=true/online-mode=false/' \ /minecraft/server.properties
 ```
 2. World 1
 
