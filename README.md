@@ -8,7 +8,7 @@ This docker image builds and runs the bungeecord.
 
 To run the lastest stable version of this docker image run
 
-	docker run -ti -p 25565:25565 -e EULA=true rehf27/bungeecord
+	docker run -ti -p 25577:25577 -e EULA=true rehf27/bungeecord
 
 the parameter
 
@@ -19,10 +19,10 @@ https://account.mojang.com/documents/minecraft_eula, the be able to start the se
 
 the parameter
 
-	-p 25565:25565
+	-p 25577:25577
 
-tell on which external port the internal 25565 should be connected, in this case the same, if
-you only type -p 25565 it will connect to a random port on the machine
+tell on which external port the internal 25577 should be connected, in this case the same, if
+you only type -p 25577 it will connect to a random port on the machine
 
 ## Giving the container a name
 
@@ -79,6 +79,7 @@ The syntax for it is
 To attach the minecraft directory in the container to directory /home/nimmis/mc-srv you add
 
 	-v /home/nimmis/mc-srv:/bungeecord
+
 
 ## Using Docker Compose for Bungeecord + Spigot Minecraft server containers
 
