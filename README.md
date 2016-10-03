@@ -2,6 +2,8 @@
 
 [![Join the chat at https://gitter.im/rehf27/docker-bungeecord](https://badges.gitter.im/rehf27/docker-bungeecord.svg)](https://gitter.im/rehf27/docker-bungeecord?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+[![](https://images.microbadger.com/badges/image/rehf27/bungeecord.svg)](https://microbadger.com/images/rehf27/bungeecord "Get your own image badge on microbadger.com")
+
 This docker image builds and runs the bungeecord.
 
 ## Starting the container
