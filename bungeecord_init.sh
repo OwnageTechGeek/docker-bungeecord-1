@@ -27,7 +27,7 @@ chown -R bungeecord.bungeecord /$BUNGEECORD_HOME/
 
 
 cd /$BUNGEECORD_HOME/
-su - bungeecord -c 'java -Xms512M -Xmx1536M -XX:MaxPermSize=128M -jar BungeeCord.jar'
+su - bungeecord -c 'java -Xms128M -Xmx256M -XX:MaxPermSize=128M -jar Waterfall.jar'
 
 # fallback to root and run shell if bungeecord don't start/forced exit
 bash
