@@ -1,4 +1,4 @@
-FROM nimmis/java:openjdk-8-jre
+FROM nimmis/java:openjdk-8-jre-headless
 
 MAINTAINER OwnageTechGeek <ownagetechgeek@talentcraft.net>
 ENV DEBIAN_FRONTEND noninteractive
