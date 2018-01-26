@@ -5,5 +5,5 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV PROCESSHOME /waterfall
 ADD start.sh /start.sh
 RUN apt-get clean-all
-RUN useradd -d /waterfall -s /bin/bash -m waterfall
+RUN useradd -d /waterfall -s /bin/bash -m process
 CMD sh /start.sh
